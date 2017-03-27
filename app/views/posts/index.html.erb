@@ -5,8 +5,11 @@
     <a href="#">comments</a>
     <a href="#">popular</a>
     <% if !logged_in? %>
-      <a href="sessions/new">login</a>
-      <%= link_to 'Register', new_user_path %>
+        <!--<a href="sessions/new">login</a>-->
+        <%= link_to 'register', new_user_path %>
+        <%= link_to 'login', new_session_path %>
+    <% else %>
+        <%= link_to 'logout', session_path(current_user), method: :delete %>
     <% end %>
   </p>
 </header>
