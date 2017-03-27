@@ -17,7 +17,7 @@
 </div>
 
 
-<%= form_for :post do |f| %>
+<%= form_for :post, url: '/posts' do |f| %>
     <%= f.label :title %>:
     <%= f.text_field :title %>
     <br>
