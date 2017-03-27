@@ -20,7 +20,8 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    render nothing: true
+    Post.destroy(params[:id])
+    redirect_to '/'
   end
   
   def show
