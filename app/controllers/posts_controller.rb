@@ -3,10 +3,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
   
-  def new
-    
-  end
-  
   def create
     params[:post][:username] = Faker::Internet.user_name
     params[:post][:comment_count] = rand(1000)
@@ -24,7 +20,7 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    
+    render nothing: true
   end
   
   def show
