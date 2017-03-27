@@ -9,4 +9,5 @@ class Post < ApplicationRecord
   def time_since_creation
     ((Time.now - created_at) / 3600).round
   end
+  
 end

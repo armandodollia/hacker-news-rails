@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def create
     params[:post][:username] = Faker::Internet.user_name
     params[:post][:comment_count] = rand(1000)
+    params[:post][:tags] = params[:post][:tags].split
     new_post = Post.new(post_params)
     
     # TODO Convert ajax route to rails
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(:title, :username, :content, :comment_count)
+    params.require(:post).permit(:title, :username, :content, :tags, :comment_count)
   end
   
 end
