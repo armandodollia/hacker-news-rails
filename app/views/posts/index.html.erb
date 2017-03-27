@@ -1,0 +1,31 @@
+<header>
+  <h1>Hacker News</h1>
+  <p>
+    <a href="#posts">new</a>
+    <a href="#">comments</a>
+    <a href="#">popular</a>
+    <a href="#">login</a>
+  </p>
+</header>
+
+
+<div class='post-container'>
+  <% @posts.each do |post| %>
+      <!--This is how you do a partial in rails-->
+      <%= render partial: '/posts/post', locals: {post: post} %>
+  <% end %>
+</div>
+
+
+<%= form_for :post do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %>
+    <br>
+
+    <%= f.submit %>
+<% end %>
+
+<!--<form id="posts" method="post" action="/posts">-->
+  <!--<input type="text" name="title" placeholder="title">-->
+  <!--<input type="submit" value="submit new post">-->
+<!--</form>-->
