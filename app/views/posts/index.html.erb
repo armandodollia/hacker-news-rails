@@ -4,9 +4,10 @@
     <a href="#posts">new</a>
     <a href="#">comments</a>
     <a href="#">popular</a>
-    <a href="#">login</a>
-    <%= link_to 'Register', new_user_path %>
-
+    <% if !logged_in? %>
+      <a href="sessions/new">login</a>
+      <%= link_to 'Register', new_user_path %>
+    <% end %>
   </p>
 </header>
 

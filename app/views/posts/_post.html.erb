@@ -1,8 +1,5 @@
 <article id="<%= post.id %>">
   <%= link_to 'UPvote', votes_path(post), method: :post %>
-  <form method="post" action='/posts/<%= post.id %>/vote' class="inline">
-    <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button"></button>
-  </form>
   <h2><%= link_to post.title, post %></h2>
   <p>
     <span class='points'><%= post.points %></span>
