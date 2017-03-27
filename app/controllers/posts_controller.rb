@@ -7,6 +7,8 @@ class PostsController < ApplicationController
     params[:post][:username] = Faker::Internet.user_name
     params[:post][:comment_count] = rand(1000)
     new_post = Post.new(post_params)
+    
+    # TODO Convert ajax route to rails
     if new_post.save
       :ok
       if request.xhr?

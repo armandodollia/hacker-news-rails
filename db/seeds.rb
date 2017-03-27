@@ -2,7 +2,8 @@
   post = Post.create!( title: Faker::Company.catch_phrase,
                        username: Faker::Internet.user_name,
                        comment_count: rand(1000),
-                       content: Faker::ChuckNorris.fact
+                       content: Faker::ChuckNorris.fact,
+                       created_at: Time.now - rand(20000)
   )
   
   vote_count = rand(100)
