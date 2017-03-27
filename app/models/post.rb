@@ -1,4 +1,4 @@
-class PostsController < ApplicationRecord
+class Post < ApplicationRecord
   has_many :votes
   validates :title, presence: true
 

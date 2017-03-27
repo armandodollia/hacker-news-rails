@@ -1,3 +1,3 @@
 class Vote < ApplicationRecord
-  belongs_to :posts_controller
+  belongs_to :post
 end
