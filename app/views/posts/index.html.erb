@@ -17,15 +17,13 @@
 </div>
 
 
-<%= form_for :post do |f| %>
+<%= form_for :post, url: '/posts', html: {id: 'posts'} do |f| %>
     <%= f.label :title %>:
     <%= f.text_field :title %>
+    <br>
+    <%= f.label :content %>:
+    <%= f.text_area :content %>
     <br>
 
     <%= f.submit %>
 <% end %>
-
-<!--<form id="posts" method="post" action="/posts">-->
-  <!--<input type="text" name="title" placeholder="title">-->
-  <!--<input type="submit" value="submit new post">-->
-<!--</form>-->
